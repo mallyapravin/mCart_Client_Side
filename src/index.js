@@ -4,10 +4,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Navbar from './components/navbar'
+import Navbar from './components/Navbar';
 
 ReactDOM.render(
   <React.StrictMode>
+  
     <Navbar/>
     <App />
   </React.StrictMode>,

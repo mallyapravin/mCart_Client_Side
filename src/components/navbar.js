@@ -7,39 +7,35 @@ import {
 } from "react-router-dom";
 import ProductCategory from './Product-category-search';
 import Products from './Products';
+import {Navbar, Nav, NavDropdown,Form, FormControl, Button} from 'react-bootstrap';
 
-class Navbar extends React.Component {
+class NavbarClass extends React.Component {
 
   render() {
 
     return (
 
       <>
+
+<Navbar bg="primary" variant="dark" expand="lg" >
+  <Navbar.Brand href="/">GadgetMart</Navbar.Brand>
+  <Navbar.Toggle aria-controls="basic-navbar-nav" />
+  <Navbar.Collapse id="basic-navbar-nav">
+    <Nav className="mr-auto">
+      <Nav.Link href="/" active={true}>Home</Nav.Link>
+      <NavDropdown title="Categories" id="basic-nav-dropdown" active={true}>
+        <NavDropdown.Item href="/products/search/phone">Smartphones</NavDropdown.Item>
+        <NavDropdown.Item href="/products/search/camera">Camera</NavDropdown.Item>
+      </NavDropdown>
+    </Nav>
+    <Form inline>
+      <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+      <Button variant="outline-dark">Search</Button>
+    </Form>
+  </Navbar.Collapse>
+</Navbar>
         <Router>
-          <nav className="navbar navbar-expand-lg navbar-dark bg-dark primary-color">
-            <a className="navbar-brand" href="/">GadgetMart</a>
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span className="navbar-toggler-icon"></span>
-            </button>
-            <div className="collapse navbar-collapse" id="navbarNav">
-              <ul className="navbar-nav">
-                <li className="nav-item">
-                  <a className="nav-link" href="/products">Home</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Categories
-                    </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/products/search/camera">Smartphones</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </nav>
+
 
 
           <Switch>
@@ -59,4 +55,4 @@ class Navbar extends React.Component {
   }
 }
 
-export default Navbar;
+export default NavbarClass;
