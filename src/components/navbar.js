@@ -44,6 +44,7 @@ class NavbarClass extends React.Component {
             <Route exact path="/" component={Products} ></Route>
           </Switch>
           
+          
         </Router>
       </>
 

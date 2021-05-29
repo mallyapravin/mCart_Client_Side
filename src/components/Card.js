@@ -1,6 +1,6 @@
 import React from 'react';
 import '../style.css'
-import phone_img from './Samsung-Galaxy-J2-2015.jpg'
+
 
 
 
@@ -19,29 +19,35 @@ class Card extends React.Component{
             // type : this.props.type,
             // available : this.props.available,
 
-            products :this.props.product
+            products :this.props.product,
+            // image_url : "./"+this.props.product.image_name
         }
     
         console.log(this.state.products);
+        
+        
     }
     
     render(){
 
+      let img_url = `/images/${this.state.products.image_name}`
         return(
 
            <>
-         
+        
 <div className="card">
   <div className="card-body">
 
-    <h5>{this.state.products.name}</h5>
+    <div className="card-title"><h5>{this.state.products.name}</h5></div>
     {/* <h6>{this.state.products.brand}</h6> */}
-    <img class="img-fluid w-100" src={phone_img} alt="Sample"/>
+   
+    <img class="img-fluid w-100" src={img_url} alt="Sample"/>
+    {console.log("./"+this.state.products.image_name)}
     {/* <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, ab. Delectus, provident nesciunt
       asperiores,</p> */}
     <p>Availabilty :{this.state.products.available? "Yes" : "No" }</p>
     <p className="text-success">Price : Rs.{this.state.products.price}</p>
-    <button type="button" class="btn btn-primary btn-md">Add to Cart</button>
+    <button type="button" class="btn btn-primary btn-sm">Add to Cart</button>
 
   </div>
 </div>
