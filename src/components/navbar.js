@@ -8,6 +8,7 @@ import {
 import ProductCategory from './Product-category-search';
 import Products from './Products';
 import {Navbar, Nav, NavDropdown,Form, FormControl, Button} from 'react-bootstrap';
+import ProductDescription from './Product-description';
 
 class NavbarClass extends React.Component {
 
@@ -41,6 +42,7 @@ class NavbarClass extends React.Component {
           <Switch>
             <Route exact path="/products/search/:search_string" component={ProductCategory}></Route>
             <Route path="/products"><Products /></Route>
+            <Route path="/product_desc/:id" component={ProductDescription}></Route>
             <Route exact path="/" component={Products} ></Route>
           </Switch>
           

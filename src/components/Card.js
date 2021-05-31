@@ -1,6 +1,7 @@
 import React from 'react';
 import '../style.css'
-
+import ProductDescription from './Product-description';
+import {Link} from 'react-router-dom';
 
 
 
@@ -23,7 +24,7 @@ class Card extends React.Component{
             // image_url : "./"+this.props.product.image_name
         }
     
-        console.log(this.state.products);
+       
         
         
     }
@@ -31,6 +32,10 @@ class Card extends React.Component{
     render(){
 
       let img_url = `/images/${this.state.products.image_name}`
+      const linkTo = {
+        pathname : `/product_desc/${this.state.products._id}`,
+        id : this.state.products._id
+      }
         return(
 
            <>
@@ -48,7 +53,13 @@ class Card extends React.Component{
     
     <br></br><p>Availabilty :{this.state.products.available? "Yes" : "No" }</p>
     <p className="text-success">Price : Rs.{this.state.products.price}</p>
-    <button type="button" class="btn btn-primary btn-sm">Add to Cart</button>
+    
+    
+    <Link to= {linkTo} className="text text-primary" >View More</Link><br></br>
+    <div>
+    <Link to="#" className="btn btn-primary btn-sm" id="addToCart">Add to Cart</Link>
+    </div>
+    
 
   </div>
 </div>

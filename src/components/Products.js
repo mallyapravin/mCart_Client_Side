@@ -39,7 +39,7 @@ class Products extends React.Component{
             <div className="row">
             {products.map((p,index)=>(
 
-                <Card product={p}/>
+                <Card key={p._id}product={p}/>
 
             ))}
             

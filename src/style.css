@@ -13,3 +13,23 @@
     margin-bottom: 20px;
 
 }
+
+#addToCart{
+
+    align-content: right;
+    margin-top: 10px;
+
+}
+
+#product_desc-img{
+
+    /* vertical-align: middle; */
+    margin-top: 70px;
+    
+}
+
+#product_desc-block{
+
+    margin-top: 70px;
+}
+
