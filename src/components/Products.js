@@ -33,7 +33,7 @@ class Products extends React.Component{
 
             <>
             
-            <h1>Products</h1>
+            <div className="page-title"><h2>Welcome to GadgetMart</h2></div>
             <div className="container">
 
             <div className="row">

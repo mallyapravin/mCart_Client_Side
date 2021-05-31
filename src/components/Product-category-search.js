@@ -43,10 +43,9 @@ class ProductCategory extends React.Component{
         return(
 
             <>
+            <div><h1 className="page-title">Welcome to GadgetMart</h1></div>
             
-            <h1>Products</h1>
             <div className="container">
-
             <div className="row">
                 
             {products.map((p,index)=>(

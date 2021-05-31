@@ -45,7 +45,8 @@ class Card extends React.Component{
     {console.log("./"+this.state.products.image_name)}
     {/* <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, ab. Delectus, provident nesciunt
       asperiores,</p> */}
-    <p>Availabilty :{this.state.products.available? "Yes" : "No" }</p>
+    
+    <br></br><p>Availabilty :{this.state.products.available? "Yes" : "No" }</p>
     <p className="text-success">Price : Rs.{this.state.products.price}</p>
     <button type="button" class="btn btn-primary btn-sm">Add to Cart</button>
 

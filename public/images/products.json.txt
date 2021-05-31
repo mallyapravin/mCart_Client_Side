@@ -1,0 +1,13 @@
+{ "_id" : "mb1", "name" : "Redmi 9A", "brand" : "Xiaomi", "type" : "phone", "description" : "Display : 6.53 inches , Camera : 13mp , Ram : 3GB, Processor : Helio G25 , Battery : 5000mAh" ,"price" : 7499, "available" : true ,"image_name":"phone1.jpg"}
+
+{ "_id" : "mb2", "name" : "Realme 9 pro", "brand" : "realme", "type" : "phone", "description" : "Display : 6.55 inches , Camera : 32mp , Ram : 4GB, Processor : Snapdragon 730G , Battery : 5020mAh" ,"price" : 14999,  "available" : false,"image_name":"phone2.jpg" }
+
+{ "_id" : "mb3", "name" : "Galaxy M51", "brand" : "Samsung", "type" : "phone", "description" : "Display : 6.7 inches Super Amoled, Camera : 32mp , Ram : 4GB, Processor : Snapdragon 750G , Battery : 7000mAh" ,"price" : 22999,  "available" : true, "image_name":"phone3.jpg"}
+
+{ "_id" : "mb4", "name" : "Redmi K20 pro", "brand" : "Xiaomi", "type" : "phone", "description" : "Display : 6.39 inches Super Amoled, Camera : 48mp , Ram : 6GB, Processor : Snapdragon 855 , Battery : 4000mAh" ,"price" : 29999,  "available" : true, "image_name":"phone4.jpg"}
+
+{ "_id" : "cm1", "name" : "Nikon D5600 DSLR", "brand" : "Nikon", "type" : "camera", "description" : "ISO range of 100-25600 , 39-point autofocus (AF) system, DX-format CMOS image sensor EXPEED 4 image-processing engine", "price" : 54990, "available" : true,"image_name":"camera1.jpg" }
+
+{ "_id" : "cm2", "name" : "Nikon D5300", "brand" : "Nikon", "type" : "camera", "description" : "ISO range of 100-25600 , 39-point autofocus (AF) system, DX-format CMOS image sensor EXPEED 4 image-processing engine", "price" : 54990, "available" : true, "image_name":"camera2.jpg" }
+
+{ "_id" : "cm3", "name" : "Nikon D5500", "brand" : "Nikon", "type" : "camera", "description" : "ISO range of 100-28900 , 39-point autofocus (AF) system, DX-format CMOS image sensor EXPEED 4 image-processing engine", "price" : 64990, "available" : true, "image_name":"camera3.jpg" }
