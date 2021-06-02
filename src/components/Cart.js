@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect } from 'react';
+import {Link} from 'react-router-dom';
 
 class Cart extends React.Component {
 
@@ -36,29 +37,7 @@ class Cart extends React.Component {
 
         // localStorage.clear();
 
-
-
     }
-
-    // getcartItems = (cartItems) => {
-
-    //     const values = Object.values(cartItems);
-
-    //     values.forEach(val=>
-
-    //          typeof val === "object" ? this.getcartItems(cartItems) : this.print(val)
-
-    //     )
-
-    // }
-
-
-    //     visit = (obj, fn) => {
-    //         const values = Object.values(obj)
-
-    //         values.forEach(val => 
-    //             val && typeof val === "object" ? this.visit(val, fn) : fn(val))
-    //     }
 
     // Quick test
     print = (val) => {
@@ -73,26 +52,59 @@ class Cart extends React.Component {
 
         let cartItems = this.state.cartItems
         // console.log("In cart items:" + cartItems[0][0].name)
-        let cartItemsArr = []
+
         return (
             <>
+            <div className="cart-title"><h1>Your Cart</h1></div>
+            
+                <>
+                
+                <div className="container">
+                {Object.keys(cartItems).length}
 
+                    {
 
-                <h1>This is my cart</h1>
-                {this.props.location.id}
-                {
-                    <ul>{
-                        
                         Object.keys(cartItems).map((itemNum, index) => (
 
-                            <li>{cartItems[itemNum][0].name}</li>
-                        ))
-                        
-                        
-                        }</ul>
+                            <>
 
-                    
-                }
+                                <div className="card" id="cart-row">
+                                <div className="row">
+                                    <div className="col" id="item-name">
+                                        <h4>{cartItems[itemNum][0].name}</h4>
+                                        <div>
+                                            <img class="img-fluid" id="item-image" src={`/images/${cartItems[itemNum][0].image_name}`} alt="Sample" />
+                                        </div>
+                                    </div>
+                                    {/* <div className="col"></div> */}
+                                    <div className="col" >
+                                        <div className="item-price"><text className="text">Rs. {cartItems[itemNum][0].price}</text></div>
+                                        <div className="item-desc"> {cartItems[itemNum][0].description}</div>
+                                        <div className="cart-button"><Link to="#" className="btn btn-danger btn-sm" id="addToCart">Remove</Link></div>
+                                        
+                               
+                                    </div>
+                                   </div> 
+                            </div>    
+                                </>
+
+                            ))
+
+
+                        }
+
+
+            </div>
+            </>
+
+
+
+
+
+
+
+
+
                 {/* {
                     
                     cartItemsArr.map((item , index)=>(
@@ -103,7 +115,7 @@ class Cart extends React.Component {
                     )
                 } */}
 
-                {/* {console.log(cartItemsArr)} */}
+        {/* {console.log(cartItemsArr)} */ }
             </>
         )
 

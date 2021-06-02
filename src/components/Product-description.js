@@ -31,6 +31,10 @@ class ProductDescription extends React.Component {
     render() {
 
         let img_url = `/images/${this.state.products.image_name}`
+        const linkToCart ={
+            pathname : `/Cart`,
+            id : this.state.id
+          }
         return (
 
             <>
@@ -51,7 +55,7 @@ class ProductDescription extends React.Component {
                             <text className="text"> <h5 className="text text-primary">Description</h5><p>{this.state.products.description}</p></text>
                             
                             </div>
-                            <Link to="#" className="btn btn-primary btn-sm" id="addToCart">Add to Cart</Link><br></br>
+                            <Link to={linkToCart} className="btn btn-primary btn-sm" id="addToCart">Add to Cart</Link>
                             <div ><Link to="#" className="btn btn-success btn-lg" id="addToCart">Buy Now</Link></div>
                             
                         </div>

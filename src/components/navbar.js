@@ -29,6 +29,7 @@ class NavbarClass extends React.Component {
         <NavDropdown.Item href="/products/search/phone">Smartphones</NavDropdown.Item>
         <NavDropdown.Item href="/products/search/camera">Camera</NavDropdown.Item>
       </NavDropdown>
+      <Nav.Link href="/Cart" active={true}>My Cart</Nav.Link>
     </Nav>
     <Form inline>
       <FormControl type="text" placeholder="Search" className="mr-sm-2" />
