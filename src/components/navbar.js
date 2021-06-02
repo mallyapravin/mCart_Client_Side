@@ -13,6 +13,18 @@ import Cart from './Cart';
 
 class NavbarClass extends React.Component {
 
+  constructor(props){
+
+    super(props);
+
+    this.state={
+
+      cart_items_count : localStorage.getItem("cartItems") ? Object.keys(JSON.parse(localStorage.getItem("cartItems"))).length : 0
+
+    }
+
+  }
+ 
   render() {
 
     return (
@@ -29,7 +41,7 @@ class NavbarClass extends React.Component {
         <NavDropdown.Item href="/products/search/phone">Smartphones</NavDropdown.Item>
         <NavDropdown.Item href="/products/search/camera">Camera</NavDropdown.Item>
       </NavDropdown>
-      <Nav.Link href="/Cart" active={true}>My Cart</Nav.Link>
+      <Nav.Link href="/Cart" active={true}>My Cart <span class="badge badge-pill badge-dark">{this.state.cart_items_count}</span></Nav.Link>
     </Nav>
     <Form inline>
       <FormControl type="text" placeholder="Search" className="mr-sm-2" />

@@ -55,8 +55,19 @@ class ProductDescription extends React.Component {
                             <text className="text"> <h5 className="text text-primary">Description</h5><p>{this.state.products.description}</p></text>
                             
                             </div>
-                            <Link to={linkToCart} className="btn btn-primary btn-sm" id="addToCart">Add to Cart</Link>
-                            <div ><Link to="#" className="btn btn-success btn-lg" id="addToCart">Buy Now</Link></div>
+                            {
+                               this.state.products.available?
+                                <>
+                                 <Link to={linkToCart} className="btn btn-primary btn-sm" id="addToCart" disabled={this.state.products.available}>Add to Cart</Link>
+                                 <div ><Link to="#" className="btn btn-success btn-lg" id="addToCart">Buy Now</Link></div>
+                                 </>
+                                 :
+                                 <>
+                                 <button className="btn btn-primary btn-sm" id="addToCart" disabled={true}>Add to Cart</button>
+                                 <div ><button className="btn btn-success btn-lg" id="addToCart" disabled={true}>Buy Now</button></div>
+                                 </>
+                            }
+                           
                             
                         </div>
                             

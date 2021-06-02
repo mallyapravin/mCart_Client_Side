@@ -39,6 +39,11 @@ class Cart extends React.Component {
 
     }
 
+    // removeItem = () => {
+
+       
+    // }
+
     // Quick test
     print = (val) => {
         console.log(val)
@@ -51,7 +56,8 @@ class Cart extends React.Component {
     render() {
 
         let cartItems = this.state.cartItems
-        // console.log("In cart items:" + cartItems[0][0].name)
+        let itemsArr = [...this.state.cartItems]
+        // console.log("In cart items:" + )
 
         return (
             <>
@@ -60,7 +66,6 @@ class Cart extends React.Component {
                 <>
                 
                 <div className="container">
-                {Object.keys(cartItems).length}
 
                     {
 
@@ -70,7 +75,7 @@ class Cart extends React.Component {
 
                                 <div className="card" id="cart-row">
                                 <div className="row">
-                                    <div className="col" id="item-name">
+                                    <div className="col" id="item-name" key={index}>
                                         <h4>{cartItems[itemNum][0].name}</h4>
                                         <div>
                                             <img class="img-fluid" id="item-image" src={`/images/${cartItems[itemNum][0].image_name}`} alt="Sample" />
@@ -80,7 +85,7 @@ class Cart extends React.Component {
                                     <div className="col" >
                                         <div className="item-price"><text className="text">Rs. {cartItems[itemNum][0].price}</text></div>
                                         <div className="item-desc"> {cartItems[itemNum][0].description}</div>
-                                        <div className="cart-button"><Link to="#" className="btn btn-danger btn-sm" id="addToCart">Remove</Link></div>
+                                        {/* <div className="cart-button"><Link to="#" className="btn btn-danger btn-sm" id="addToCart">Remove</Link></div> */}
                                         
                                
                                     </div>
