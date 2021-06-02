@@ -3,13 +3,16 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  Redirect,
+  useHistory
 } from "react-router-dom";
 import ProductCategory from './Product-category-search';
 import Products from './Products';
 import {Navbar, Nav, NavDropdown,Form, FormControl, Button} from 'react-bootstrap';
 import ProductDescription from './Product-description';
 import Cart from './Cart';
+import PropTypes from 'prop-types'
 
 class NavbarClass extends React.Component {
 
@@ -17,14 +20,17 @@ class NavbarClass extends React.Component {
 
     super(props);
 
+   
+
     this.state={
 
-      cart_items_count : localStorage.getItem("cartItems") ? Object.keys(JSON.parse(localStorage.getItem("cartItems"))).length : 0
+      cart_items_count : localStorage.getItem("cartItems") ? Object.keys(JSON.parse(localStorage.getItem("cartItems"))).length : 0,
+      search_string :""
 
     }
 
   }
- 
+
   render() {
 
     return (
@@ -43,9 +49,9 @@ class NavbarClass extends React.Component {
       </NavDropdown>
       <Nav.Link href="/Cart" active={true}>My Cart <span class="badge badge-pill badge-dark">{this.state.cart_items_count}</span></Nav.Link>
     </Nav>
-    <Form inline>
-      <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-      <Button variant="outline-dark">Search</Button>
+    <Form inline >
+      <FormControl type="text" placeholder="Search" className="mr-sm-2" name="search_string" value={this.state.search_string} onChange={e => this.setState({ search_string: e.target.value })}/>
+      <Button variant="outline-dark" type="submit" value="submit">Search</Button>
     </Form>
   </Navbar.Collapse>
 </Navbar>
