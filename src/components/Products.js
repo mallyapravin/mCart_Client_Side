@@ -7,7 +7,6 @@ class Products extends React.Component{
 
     state={
         products:[],
-        cartItems :[]
     }
 
     componentDidMount(){
