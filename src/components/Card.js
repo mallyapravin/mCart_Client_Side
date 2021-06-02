@@ -21,6 +21,8 @@ class Card extends React.Component{
             // available : this.props.available,
 
             products :this.props.product,
+            
+            cartItems :[]
             // image_url : "./"+this.props.product.image_name
         }
     
@@ -28,12 +30,20 @@ class Card extends React.Component{
         
         
     }
+
+
+    
     
     render(){
 
       let img_url = `/images/${this.state.products.image_name}`
-      const linkTo = {
+      const linkToDesc = {
         pathname : `/product_desc/${this.state.products._id}`,
+        id : this.state.products._id
+      }
+
+      const linkToCart ={
+        pathname : `/Cart`,
         id : this.state.products._id
       }
         return(
@@ -55,9 +65,9 @@ class Card extends React.Component{
     <p className="text-success">Price : Rs.{this.state.products.price}</p>
     
     
-    <Link to= {linkTo} className="text text-primary" >View More</Link><br></br>
+    <Link to= {linkToDesc} className="text text-primary" >View More</Link><br></br>
     <div>
-    <Link to="#" className="btn btn-primary btn-sm" id="addToCart">Add to Cart</Link>
+    <Link to={linkToCart} className="btn btn-primary btn-sm" id="addToCart">Add to Cart</Link>
     </div>
     
 

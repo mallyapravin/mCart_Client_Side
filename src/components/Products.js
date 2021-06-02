@@ -6,7 +6,8 @@ import axios from 'axios'
 class Products extends React.Component{
 
     state={
-        products:[]
+        products:[],
+        cartItems :[]
     }
 
     componentDidMount(){
