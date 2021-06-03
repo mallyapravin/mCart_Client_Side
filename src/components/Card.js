@@ -2,6 +2,9 @@ import React from 'react';
 import '../style.css'
 import ProductDescription from './Product-description';
 import {Link} from 'react-router-dom';
+import {Button} from "react-bootstrap";
+import MyVerticallyCenteredModal from './Example';
+
 
 
 
@@ -22,15 +25,15 @@ class Card extends React.Component{
 
             products :this.props.product,
             
-            cartItems :[]
+            cartItems :[],
             // image_url : "./"+this.props.product.image_name
+           modalShow : false
         }
     
        
         
         
     }
-
 
     
     
@@ -65,12 +68,23 @@ class Card extends React.Component{
     <p className="text-success">Price : Rs.{this.state.products.price}</p>
     
     
-    <Link to= {linkToDesc} className="text text-primary" >View More</Link><br></br>
+    <Link to= {linkToDesc} className="text text-primary" >View</Link><br></br>
     <div>
     <Link to={linkToCart} className="btn btn-primary btn-sm" id="addToCart">Add to Cart</Link>
-    </div>
-    
+    </div><br></br>
+    <div>
+      <Button variant="outline-primary btn-sm" onClick={() => this.setState({modalShow : true})} block>
+        Know More
+      </Button>
 
+      <MyVerticallyCenteredModal
+        show={this.state.modalShow}
+        onHide={() =>  this.setState({modalShow : false})}
+        name = {this.state.products.name}
+        price = {this.state.products.price}
+        desc = {this.state.products.description}
+      />
+    </div>
   </div>
 </div>
            </>
